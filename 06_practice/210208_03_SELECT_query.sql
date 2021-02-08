@@ -1,57 +1,57 @@
-use sqlDB;
+ï»¿use sqlDB;
 go
 
--- ÀÌ¸§ÀÌ '±è°æÈ£'ÀÎ µ¥ÀÌÅÍ Á¶È¸
+-- ì´ë¦„ì´ 'ê¹€ê²½í˜¸'ì¸ ë°ì´í„° ì¡°íšŒ
 SELECT * FROM userTbl
-WHERE username = '±è°æÈ£'
+WHERE username = 'ê¹€ê²½í˜¸'
 
 
--- 1970³â ÀÌÈÄ Ãâ»ıÀÌ°í, Å° 182 ÀÌ»óÀÎ µ¥ÀÌÅÍÀÇ ¾ÆÀÌµğ, ÀÌ¸§ Á¶È¸
+-- 1970ë…„ ì´í›„ ì¶œìƒì´ê³ , í‚¤ 182 ì´ìƒì¸ ë°ì´í„°ì˜ ì•„ì´ë””, ì´ë¦„ ì¡°íšŒ
 SELECT userID, username, birthYear, height
   FROM userTbl
  WHERE birthYear >= 1970 AND height >= 182
 
- -- 1970³â ÀÌÈÄ Ãâ»ıÀÌ°Å³ª, Å° 182 ÀÌ»óÀÎ µ¥ÀÌÅÍÀÇ ¾ÆÀÌµğ, ÀÌ¸§ Á¶È¸
+ -- 1970ë…„ ì´í›„ ì¶œìƒì´ê±°ë‚˜, í‚¤ 182 ì´ìƒì¸ ë°ì´í„°ì˜ ì•„ì´ë””, ì´ë¦„ ì¡°íšŒ
  SELECT userID, username, birthYear, height
   FROM userTbl
  WHERE birthYear >= 1970 OR height >= 182
 
 
- -- Å°°¡ 180~183 »çÀÌÀÎ »ç¶÷¸¸ Á¶È¸
+ -- í‚¤ê°€ 180~183 ì‚¬ì´ì¸ ì‚¬ëŒë§Œ ì¡°íšŒ
  SELECT userID, username, height
   FROM userTbl
  WHERE  height >= 180 and height <=183;
 
- -- À§ Á¶°Ç¹®À» between A and B ·Î »ç¿ë
+ -- ìœ„ ì¡°ê±´ë¬¸ì„ between A and B ë¡œ ì‚¬ìš©
  SELECT userID, username, height
   FROM  userTbl
  WHERE  height between 180 and 183;
 
 
- -- Áö¿ªÀÌ °æ³², Àü³², °æºÏ ÀÎ µ¥ÀÌÅÍ Á¶È¸
+ -- ì§€ì—­ì´ ê²½ë‚¨, ì „ë‚¨, ê²½ë¶ ì¸ ë°ì´í„° ì¡°íšŒ
  SELECT userID, username, addr
   FROM  userTbl
- WHERE addr = '°æ³²' or addr = 'Àü³²' or addr = '°æºÏ';
+ WHERE addr = 'ê²½ë‚¨' or addr = 'ì „ë‚¨' or addr = 'ê²½ë¶';
 
- -- À§ Á¶°Ç¹®À» IN À¸·Î »ç¿ë
+ -- ìœ„ ì¡°ê±´ë¬¸ì„ IN ìœ¼ë¡œ ì‚¬ìš©
  SELECT userID, username, addr
   FROM  userTbl
- WHERE addr IN ('°æ³²', 'Àü³²', '°æºÏ');
+ WHERE addr IN ('ê²½ë‚¨', 'ì „ë‚¨', 'ê²½ë¶');
 
  
- -- ¼ºÀÌ '±è'¾¾ÀÎ »ç¶÷ Á¶È¸(LIKE »ç¿ë)  
+ -- ì„±ì´ 'ê¹€'ì”¨ì¸ ì‚¬ëŒ ì¡°íšŒ(LIKE ì‚¬ìš©)  
  SELECT userID, username, addr
   FROM  userTbl
- WHERE username like '±è%';  -- '%'´Â ¹«¾ùÀÌµç Çã¿ëÇÑ´Ù´Â ÀÇ¹ÌÀÌ´Ù.
+ WHERE username like 'ê¹€%';  -- '%'ëŠ” ë¬´ì—‡ì´ë“  í—ˆìš©í•œë‹¤ëŠ” ì˜ë¯¸ì´ë‹¤.
 
  SELECT userID, username, addr
   FROM  userTbl
- WHERE username like '_Á¾½Å'; -- '_'´Â ¾Æ¹«°Å³ª ÇÑ ±ÛÀÚ°¡ ¿Íµµ µÇ´Ù´Â ÀÇ¹Ì
+ WHERE username like '_ì¢…ì‹ '; -- '_'ëŠ” ì•„ë¬´ê±°ë‚˜ í•œ ê¸€ìê°€ ì™€ë„ ë˜ë‹¤ëŠ” ì˜ë¯¸
 
  /*
-  '%'´Â ¸î±ÛÀÚ°¡¿Íµµ »ó°ü¾ø°í, '_'´Â ¾Æ¹«°Å³ª ÇÑ ±ÛÀÚ°¡ ¿Â´Ù´Â ¶æ
-  _¿ë% ·Î ¿¹¸¦ µé¸é, ¸Ç ¾Õ¿¡ ¾Æ¹« ÇÑ±ÛÀÚ°¡ ¿À°í, µÎ¹øÂ°´Â ¿ë, ¼¼¹øÂ°ºÎÅÍ´Â ¹¹°¡¿Íµµ »ó°ü¾ø´Ù´Â ¶æ.
-  Á¶¿ë, Á¶¿ëÇÊ, Á¶¿ëÇÑ »ç¶÷, ÀÌ¿ëÇØÁà¼­ °¨»çÇÕ´Ï´Ù. µîÀ¸·Î »ç¿ë°¡´É
+  '%'ëŠ” ëª‡ê¸€ìê°€ì™€ë„ ìƒê´€ì—†ê³ , '_'ëŠ” ì•„ë¬´ê±°ë‚˜ í•œ ê¸€ìê°€ ì˜¨ë‹¤ëŠ” ëœ»
+  _ìš©% ë¡œ ì˜ˆë¥¼ ë“¤ë©´, ë§¨ ì•ì— ì•„ë¬´ í•œê¸€ìê°€ ì˜¤ê³ , ë‘ë²ˆì§¸ëŠ” ìš©, ì„¸ë²ˆì§¸ë¶€í„°ëŠ” ë­ê°€ì™€ë„ ìƒê´€ì—†ë‹¤ëŠ” ëœ».
+  ì¡°ìš©, ì¡°ìš©í•„, ì¡°ìš©í•œ ì‚¬ëŒ, ì´ìš©í•´ì¤˜ì„œ ê°ì‚¬í•©ë‹ˆë‹¤. ë“±ìœ¼ë¡œ ì‚¬ìš©ê°€ëŠ¥
   */
 
 
@@ -64,108 +64,168 @@ WHERE  height > 177;
 SELECT username, height
  FROM  userTbl
 WHERE  height > 
-		(SELECT height from userTbl where username = '±è°æÈ£'); -- ±è°æÈ£¿Í Å°(177)°¡ °°Àº
-	 -- (SELECT username, height from userTbl where username = '±è°æÈ£');
-	 -- ¼­ºêÄõ¸®¿¡¼­´Â WHERE¿Í ¶È°°Àº ºñ±³ÇÒ °ª¸¸ »ç¿ëÇØ¾ßÇÑ´Ù.
+		(SELECT height from userTbl where username = 'ê¹€ê²½í˜¸'); -- ê¹€ê²½í˜¸ì™€ í‚¤(177)ê°€ ê°™ì€
+	 -- (SELECT username, height from userTbl where username = 'ê¹€ê²½í˜¸');
+	 -- ì„œë¸Œì¿¼ë¦¬ì—ì„œëŠ” WHEREì™€ ë˜‘ê°™ì€ ë¹„êµí•  ê°’ë§Œ ì‚¬ìš©í•´ì•¼í•œë‹¤.
 
-	 -- (SELECT height from userTbl where username = '±è%');
-	 -- ¼­ºê Äõ¸®¿¡¼­´Â °ªÀÌ µÎ°³ ÀÌ»ó ¹İÈ¯µÇ¸é ¿¡·¯(µü ÇÏ³ª¸¸ ¹İÈ¯µÇ¾î¾ßÇÑ´Ù)
+	 -- (SELECT height from userTbl where username = 'ê¹€%');
+	 -- ì„œë¸Œ ì¿¼ë¦¬ì—ì„œëŠ” ê°’ì´ ë‘ê°œ ì´ìƒ ë°˜í™˜ë˜ë©´ ì—ëŸ¬(ë”± í•˜ë‚˜ë§Œ ë°˜í™˜ë˜ì–´ì•¼í•œë‹¤)
 
 
--- ½Ç¹«¿¡¼­´Â µüÈ÷ ¸¹ÀÌ »ç¿ëÇÏÁö´Â ¾ÊÀ½
--- any »ç¿ë(¼­ºêÄõ¸® °á°ú Áß¿¡ ÇÏ³ª¸¸ ¸¸Á·ÇØµµµÊ)
+-- ì‹¤ë¬´ì—ì„œëŠ” ë”±íˆ ë§ì´ ì‚¬ìš©í•˜ì§€ëŠ” ì•ŠìŒ
+-- any ì‚¬ìš©(ì„œë¸Œì¿¼ë¦¬ ê²°ê³¼ ì¤‘ì— í•˜ë‚˜ë§Œ ë§Œì¡±í•´ë„ë¨)
 SELECT username, height
  FROM  userTbl
 WHERE  height >= any
-		(SELECT height from userTbl where addr = '°æ³²');
+		(SELECT height from userTbl where addr = 'ê²½ë‚¨');
 
 
--- all »ç¿ë(¼­ºê Äõ¸® °á°ú Áß ¸ğµÎ ¸¸Á·½ÃÄÑ¾ßÇÑ´Ù.)
+-- all ì‚¬ìš©(ì„œë¸Œ ì¿¼ë¦¬ ê²°ê³¼ ì¤‘ ëª¨ë‘ ë§Œì¡±ì‹œì¼œì•¼í•œë‹¤.)
 SELECT username, height
  FROM  userTbl
 WHERE  height >= all
-		(SELECT height from userTbl where addr = '°æ³²');
+		(SELECT height from userTbl where addr = 'ê²½ë‚¨');
 
--- IN »ç¿ë( '= any' ¿Í °°À½)
+-- IN ì‚¬ìš©( '= any' ì™€ ê°™ìŒ)
 SELECT username, height
  FROM  userTbl
 WHERE  height in
-		(SELECT height from userTbl where addr = '°æ³²');
+		(SELECT height from userTbl where addr = 'ê²½ë‚¨');
 
 SELECT username, height
  FROM  userTbl
 WHERE  height = any
-		(SELECT height from userTbl where addr = '°æ³²');
+		(SELECT height from userTbl where addr = 'ê²½ë‚¨');
 
 
 
--- ORDER BY Á¤·Ä(°á°ú¹°¿¡ ´ëÇØ ¿µÇâÀ» ¹ÌÄ¡Áö´Â ¾ÊÁö¸¸. °á°ú°¡ Ãâ·ÂµÇ´Â ¼ø¼­¸¦ Á¶ÀıÇÒ ¼ö ÀÖ´Ù)
+-- ORDER BY ì •ë ¬(ê²°ê³¼ë¬¼ì— ëŒ€í•´ ì˜í–¥ì„ ë¯¸ì¹˜ì§€ëŠ” ì•Šì§€ë§Œ. ê²°ê³¼ê°€ ì¶œë ¥ë˜ëŠ” ìˆœì„œë¥¼ ì¡°ì ˆí•  ìˆ˜ ìˆë‹¤)
 SELECT username, mDate
   from userTbl
---ORDER BY mDate desc;  -- DESC ³»¸²Â÷¼ø
-  ORDER BY mDate asc;   -- asc ¿À¸§Â÷¼ø
+--ORDER BY mDate desc;  -- DESC ë‚´ë¦¼ì°¨ìˆœ
+  ORDER BY mDate asc;   -- asc ì˜¤ë¦„ì°¨ìˆœ
 
   SELECT *
   from userTbl
   order by userID asc;
 
-  -- distinct : Áßº¹ Á¦°Å
+  -- distinct : ì¤‘ë³µ ì œê±°
   SELECT distinct addr
   from userTbl
+
 
  -- TOP 
   SELECT TOP(5) * 
   from userTbl
-  ORDER BY mDate desc;   -- asc ´Â ¿À¸§Â÷¼ø
+  ORDER BY mDate desc;   -- asc ëŠ” ì˜¤ë¦„ì°¨ìˆœ
 
-  -- offset ¾Õ¼± °³¼ö¸¸Å­ ¶Ù¾î ³ÑÀº ÈÄ Á¶È¸
+
+  -- offset ì•ì„  ê°œìˆ˜ë§Œí¼ ë›°ì–´ ë„˜ì€ í›„ ì¡°íšŒ
   SELECT userID, username, birthYear
   FROM userTbl
   order by birthYear
   offset 4 rows
 
-  -- SELECT INTO : Å×ÀÌºíÀ» º¹»çÇØ¼­ »ç¿ë(PK, FKµîÀÇ Á¦¾à Á¶°ÇÀº º¹»çµÇÁö´Â ¾ÊÀ½)
-  SELECT * INTO buytbl2 from buytbl				    -- Å×ÀÌºí º¹»ç
-  SELECT userID, prodName INTO buytbl3 from buytbl  -- ÀÏºÎ ¿­¸¸ º¹»çÇÒ ¼öµµ ÀÖÀ½
+
+  -- SELECT INTO : í…Œì´ë¸”ì„ ë³µì‚¬í•´ì„œ ì‚¬ìš©(PK, FKë“±ì˜ ì œì•½ ì¡°ê±´ì€ ë³µì‚¬ë˜ì§€ëŠ” ì•ŠìŒ)
+  SELECT * INTO buytbl2 from buytbl				    -- í…Œì´ë¸” ë³µì‚¬
+  SELECT userID, prodName INTO buytbl3 from buytbl  -- ì¼ë¶€ ì—´ë§Œ ë³µì‚¬í•  ìˆ˜ë„ ìˆìŒ
 
   select * from buytbl2;
 
--- GROUP BY : ±×·ìÀ¸·Î ¹­¾îÁÖ´Â ¿ªÇÒÀ» ÇÔ. 
--- ±×´ë·Î select¸¦ÇÏ¸é ±¸¸ÅÇÑ µ¥ÀÌÅÍ°¡ °¢°¢ Ãâ·ÂµÇ´Âµ¥, Áı°èÇÔ¼ö¸¦ÀÌ¿ëÇØ ´õ ±ò²ûÇÏ°Ô Ãâ·ÂÇÒ ¼ö ÀÖ´Ù.
+
+-- GROUP BY : ê·¸ë£¹ìœ¼ë¡œ ë¬¶ì–´ì£¼ëŠ” ì—­í• ì„ í•¨. 
+-- ê·¸ëŒ€ë¡œ selectë¥¼í•˜ë©´ êµ¬ë§¤í•œ ë°ì´í„°ê°€ ê°ê° ì¶œë ¥ë˜ëŠ”ë°, ì§‘ê³„í•¨ìˆ˜ë¥¼ì´ìš©í•´ ë” ê¹”ë”í•˜ê²Œ ì¶œë ¥í•  ìˆ˜ ìˆë‹¤.
  SELECT userID, amount
    FROM buytbl
  order by userID;
 
--- ±¸¸ÅÇÑ °³¼ö¸¦ sumÀ» ÀÌ¿ëÇØ Ãâ·Â(Áı°èÇÔ¼ö´Â ¼ıÀÚ¸¸ °¡´É)
-select userID, sum(amount) AS '±¸¸Å ÇÕ°è'  -- AS [] ¶Ç´Â AS '' ·Î ¿­ ÀÌ¸§À» Á¤ÇØÁÙ ¼ö ÀÖ´Ù.
+
+-- êµ¬ë§¤í•œ ê°œìˆ˜ë¥¼ sumì„ ì´ìš©í•´ ì¶œë ¥(ì§‘ê³„í•¨ìˆ˜ëŠ” ìˆ«ìë§Œ ê°€ëŠ¥)
+select userID, sum(amount) AS 'êµ¬ë§¤ í•©ê³„'  -- AS [] ë˜ëŠ” AS '' ë¡œ ì—´ ì´ë¦„ì„ ì •í•´ì¤„ ìˆ˜ ìˆë‹¤.
 from buytbl
 group by userID;
 
+
 -- min, max
-select min(height) AS 'ÃÖ¼ÒÅ°'
+select min(height) AS 'ìµœì†Œí‚¤'
  from userTbl
 
- select max(height) AS 'ÃÖ´ëÅ°'
+ select max(height) AS 'ìµœëŒ€í‚¤'
  from userTbl
 
- -- À§ 2±¸¹® ÇÕÄ¡±â
- select min(height) AS 'ÃÖ¼ÒÅ°',  max(height) AS 'ÃÖ´ëÅ°'
+ -- ìœ„ 2êµ¬ë¬¸ í•©ì¹˜ê¸°
+ select min(height) AS 'ìµœì†Œí‚¤',  max(height) AS 'ìµœëŒ€í‚¤'
  from userTbl
 
- -- ´Ù¸¥ ÄÃ·³À» ³Ö±â(Áı°èÇÔ¼ö + ´Ù¸¥ ÄÃ·³Àº group by¸¦ »ç¿ëÇØ¾ßÇÑ´Ù.)
-  select userID, userName, min(height) AS 'ÃÖ¼ÒÅ°',  max(height) AS 'ÃÖ´ëÅ°'
+
+ -- ë‹¤ë¥¸ ì»¬ëŸ¼ì„ ë„£ê¸°(ì§‘ê³„í•¨ìˆ˜ + ë‹¤ë¥¸ ì»¬ëŸ¼ì€ group byë¥¼ ì‚¬ìš©í•´ì•¼í•œë‹¤.)
+  select userID, userName, min(height) AS 'ìµœì†Œí‚¤',  max(height) AS 'ìµœëŒ€í‚¤'
  from userTbl
  group by userID, userName
- -- ÀÌ·¸°ÔÇÏ¸é ¿øÇÏ´Â Á¶È¸°¡ µÇÁö¾ÊÀ¸¹Ç·Î whereÀ» ÅëÇÑ ¼­ºêÄõ¸®¸¦ ÀÌ¿ëÇØ¾ßÇÔ
+ -- ì´ë ‡ê²Œí•˜ë©´ ì›í•˜ëŠ” ì¡°íšŒê°€ ë˜ì§€ì•Šìœ¼ë¯€ë¡œ whereì„ í†µí•œ ì„œë¸Œì¿¼ë¦¬ë¥¼ ì´ìš©í•´ì•¼í•¨
 
- -- ¿ì¸®°¡ ¿øÇÏ´Â Ãâ·Â¹®
+ -- ìš°ë¦¬ê°€ ì›í•˜ëŠ” ì¶œë ¥ë¬¸
  select userName, height
  from userTbl
  where height = (select min(height) from userTbl) 
 	or height = (select max(height) from usertbl);
 
--- ÃÑ µ¥ÀÌÅÍ °³¼ö(count)  -> ÄÃ·³ °³¼ö
-select count(*) as 'È¸¿ø¼ö' from userTbl;    -- 10
-select count(*) as '±¸¸Å³»¿ª¼ö' from buytbl; -- 12
+-- ì´ ë°ì´í„° ê°œìˆ˜(count)  -> ì»¬ëŸ¼ ê°œìˆ˜
+select count(*) as 'íšŒì›ìˆ˜' from userTbl;    -- 10
+select count(*) as 'êµ¬ë§¤ë‚´ì—­ìˆ˜' from buytbl; -- 12
+
+
+-- ì˜ëª»ëœ í•„í„°ë§
+select userID, sum(price * amount) as 'ì „ì²´ êµ¬ë§¤ ê¸ˆì•¡'
+from buytbl
+--WHERE sum(price * amount) >= 1000
+group by userID
+having  sum(price * amount) >= 1000
+order by sum(price * amount) desc;  -- order byëŠ” ì§‘ê³„í•¨ìˆ˜ê°€ ë‚˜ì™€ë„ ë¨.
+
+
+-- rollup, cube
+select num, groupName, sum(price * amount) as 'êµ¬ë§¤ ê¸ˆì•¡', -- ì§‘ê³„í•¨ìˆ˜ê°€ ë“¤ì–´ê°€ë©´ ë¬´ì¡°ê±´ ê·¸ë£¹ë°”ì´ í•„ìš”
+		GROUPING_ID(groupName, num)  -- ê²°ê³¼ê°€ 0ì´ë©´ ì›ë˜ìˆë˜ ë°ì´í„°, 1ì´ë©´ í•©ê³„ë¥¼ìœ„í•´ ì¶”ê°€ëœ ì—´ì´ë¼ê³  ë³´ë©´ë¨
+from buytbl
+GROUP BY rollup(groupName, num);   -- ì§‘ê³„í•¨ìˆ˜ ì™¸ì˜ ëª¨ë“  ì»¬ëŸ¼ì„ ì ì–´ì¤˜ì•¼í•œë‹¤.
+-- rollupì„ í†µí•´ groupNameë¼ë¦¬ì˜ ì†Œí•©ê³„, ëª¨ë“  ì´í•©ê¹Œì§€ ë‹¤ ì¡°íšŒí•  ìˆ˜ ìˆë‹¤.
+
+
+-- userID, groupNameìœ¼ë¡œ cube ë‹¤ì°¨ì› í•©ê³„(ROLLUPì´ ë” ì‰¬ìš°ë‹ˆê¹Œ ë¡¤ì—…ë§Œ ì“°ì)
+select userID, sum(price * amount) as 'êµ¬ë§¤ ê¸ˆì•¡'
+from buytbl
+GROUP BY cube(userID);   
+
+select groupName, sum(price * amount) as 'êµ¬ë§¤ ê¸ˆì•¡'
+from buytbl
+GROUP BY cube(groupName);
+
+
+
+-- with ì ˆê³¼ CTE
+
+-- without CTE
+SELECT userID, sum(price * amount) as 'total'
+from buytbl
+group by userID
+order by sum(price * amount) desc;
+
+-- CTE ì‚¬ìš©
+with CTE_tmp(userID, total)
+as
+(   SELECT userID, sum(price * amount) as 'total'
+	from buytbl
+	group by userID  )
+select * from cte_tmp order by total desc;
+
+
+
+
+
+
+
+
 
 
