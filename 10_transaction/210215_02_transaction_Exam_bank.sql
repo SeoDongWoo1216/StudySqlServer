@@ -2,6 +2,9 @@
 use tempdb
 go
 
+use sqlDB
+go
+
 -- 통장테이블 생성
 CREATE TABLE bankbook
 ( 
