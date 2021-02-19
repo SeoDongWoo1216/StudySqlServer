@@ -359,58 +359,34 @@ INSERT [dbo].[cateTBL] ([cateidx], [cateName]) VALUES (N'N0006', N'SF/판타지'
 GO
 SET IDENTITY_INSERT [dbo].[memberTBL] ON 
 GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (1, N'김현수', N'nhsk0767', N'1234', N'B', N'01049420767', N'nhsk0767@gmail.com', N'부산진구 부암동', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (2, N'최연성', N'am3251', N'p@ssw0rd!', N'A', N'01039013464', N'am3251@naver.com', N'부산', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (3, N'성홍렬', N'ghd0276', N'1111', N'C', N'01077590276', N'ghd0276@naver.com', N'부산', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (4, N'박규민', N'guemin96', N'1111', N'D', N'01046329171', N'guemin12@naver.com', N'부산 해운대구 좌동 ', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (5, N'최현화', N'ieyeppo', N'안알랴줌', N'B', N'01039513150', N'ieyeppo@gmail.com', N'부산광역시 동래구', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (6, N'강동훈', N'noworry1', N'1111', N'A', N'01065609693', N'noworry1@naver.com', N'부산진구 당감동 백양순환로9', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (7, N'서동우', N'dw6642', N'1111', N'A', N'01049017846', N'dw6642@naver.com', N'부산시 사상구 괘법동', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (8, N'박성철', N'for', N'1111', N'C', N'01028741479', N'ochestra365@naver.com', N'부산', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (9, N'우준성', N'wnstjd4852', N'1111', N'D', N'01030921890', N'wnstjd4852@naver.com', N'부산', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (10, N'김구겸', N'kg4543', N'1111', N'D', N'01045438127', N'jyc351919@naver.com', N'부산진구 연지동', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (11, N'최재훈', N'jh', N'1111', N'C', N'01075699066', N'cjh930306@naver.com', N'부산', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (12, N'편상현', N'vustkdgus', N'1234', N'B', N'01026579460', N'vustkdgus@naver.com', N'부산광역시 북구 금곡대로228', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (13, N'최대현', N'choidaehyeon', N'1234', N'A', N'01089847695', N'eogusalrns@naver.com', N'창원', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (14, N'조희지', N'zizi0308', N'asdfg00', N'C', N'01064386926', N'whgmlwl222@naver.com', N'부산', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (15, N'신민경', N'alrud006', N'1111', N'A', N'01053145427', N'alsrud006@naver.com', N'부산', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (16, N'하진우', N'whiteHair', N'1111', N'A', N'01062055278', N'pddana@naver.com', N'부산 남구 대연동', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (17, N'정재윤', N'jyj1994', N'1024', N'B', N'01077107683', N'^_^@^_^.com', N'부산', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (18, N'안성주', N'tjdwn12', N'1111', N'B', N'01027405111', N'tjdwn6459@naver.com', N'부산', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (19, N'김유림', N'yfla980107', N'1111', N'C', N'01051986232', N'yfla980107@gmail.com', N'부산', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (20, N'허재현', N'jhheo06', N'6929', N'C', N'01064266929', N'jhheo06@gmail.com', N'부산 해운대구 해운대로161번길 12', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (21, N'박효진', N'Edun', N'? つ ?_? ?つ', N'A', N'01088452413', N'edun@naver.com', N'김해', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (22, N'이태경', N'taekyoung1014', N'1111', N'A', N'01072809231', N'tkyoung1014@naver.com', N'부산광역시 해운대구 대천로67번길 7', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (23, N'김주현', N'kjoo10', N'1004', N'C', N'01071773162', N'kjoo10@naver.com', N'부산 남구 대연동', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (24, N'박수민', N'mini247269', N'1111', N'D', N'01075588982', N'mini247269@naver.com', N'부산 남구 대연동', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (25, N'김하윤', N'Hayun', N'1111', N'D', N'01080299554', N'95-ha@naver.com', N'부산', CAST(N'2021-02-17' AS Date), NULL, NULL)
-GO
-INSERT [dbo].[memberTBL] ([memberidx], [memberName], [memberID], [password], [levels], [mobile], [email], [address], [regDate], [lastLoginDt], [loginIpAddr]) VALUES (26, N'성명건', N'personar95', N'1234', N'S', N'01066837732', N'personar95@naver.com', N'부산 사하구', CAST(N'2021-02-17' AS Date), NULL, N'210.119.12.109')
-GO
+INSERT [dbo].[membertbl] ([Idx], [Names], [Levels], [Addr], [Mobile], [Email], [userID], [passwords], [lastLoginDt], [loginIpAddr]) 
+VALUES 
+  (1, N'강동훈', N'A', N'부산시 사하구', N'010-2967-1016', N'KDH@NAVER.COM', N'KDH', N'1111', NULL, NULL)
+, (2, N'김유림', N'B', N'부산시 남구', N'010-9291-4419', N'KYR@DAUM.COM', N'KYR', N'1111', NULL, NULL)
+, (3, N'김구겸', N'B', N'부산시 북구', N'010-8956-7423', N'KGK@GMAIL.COM', N'KGK', N'1111', NULL, NULL)
+, (4, N'김주현', N'D', N'부산시 영도구', N'010-8736-2919', N'KJH@HOTMAIL.COM', N'KJH', N'1111', NULL, NULL)
+, (5, N'김하윤', N'A', N'부산시 강서구', N'010-9295-6600', N'KHY@YAHOO.CO.KR', N'KHY', N'1111', NULL, NULL)
+, (6, N'김현수', N'C', N'부산시 동래구', N'010-5341-0128', N'KHS@NAVER.COM', N'KHS', N'1111', NULL, NULL)
+, (7, N'박규민', N'A', N'부산시 중구', N'010-2244-0675', N'PKM@EMPAL.COM', N'PKM', N'1111', NULL, NULL)
+, (8, N'박성철', N'D', N'부산시 수영구', N'010-6318-2590', N'PSC@HOTMAIL.COM', N'PSC', N'1111', NULL, NULL)
+, (9, N'박수민', N'A', N'부산시 강서구', N'010-5615-1344', N'PSM@NATE.COM', N'PSM', N'1111', NULL, NULL)
+,(10, N'박효진', N'C', N'김해시 삼안동', N'010-9291-0882', N'PHJ@DREAMWIZ.COM', N'PHJ', N'1111', NULL, NULL)
+,(11, N'서동우', N'D', N'부산시 남구', N'010-8956-6008', N'SDW@KOREA.COM', N'SDW', N'1111', NULL, NULL)
+,(12, N'성홍렬', N'A', N'부산시 금정구', N'010-2923-2919', N'SHR@HOTMAIL.COM', N'SHR', N'1111', NULL, NULL)
+,(13, N'신민경', N'B', N'부산시 부산진구', N'010-9295-5718', N'SMK@GMAIL.COM', N'SMK', N'1111', NULL, NULL)
+,(14, N'안성주', N'D', N'부산시 동구', N'010-9341-0128', N'ASJ@NAVER.COM', N'ASJ', N'1111', NULL, NULL)
+,(15, N'우준성', N'A', N'부산시 사상구', N'010-5436-0675', N'WJS@HOTMAIL.COM', N'WJS', N'1111', NULL, NULL)
+,(16, N'이태경', N'C', N'부산시 남구', N'010-6318-4654', N'LTG@FREECHAL.COM', N'LTG', N'1111', NULL, NULL)
+,(17, N'정재윤', N'A', N'부산시 남구', N'010-5615-7437', N'JJY@NATE.COM', N'JJY', N'1111', NULL, NULL)
+,(18, N'조희지', N'B', N'부산시 수영구', N'010-6566-4419', N'JHJ@DAUM.COM', N'JHJ', N'1111', NULL, NULL)
+,(19, N'최대현', N'C', N'부산시 사상구', N'010-8956-1508', N'CDH@GMAIL.COM', N'CDH', N'1111', NULL, NULL)
+,(20, N'최연성', N'B', N'부산시 연제구', N'010-5667-2919', N'CYS@HOTMAIL.COM', N'CYS', N'1111', NULL, NULL)
+,(21, N'최재훈', N'A', N'부산시 해운대구', N'010-9295-0341', N'CJH@YAHOO.COM', N'CJH', N'1111', NULL, NULL)
+,(22, N'최현화', N'A', N'부산시 사하구', N'010-5341-4736', N'CHH@NAVER.COM', N'CHH', N'1111', NULL, NULL)
+,(23, N'편상현', N'A', N'부산시 금정구', N'010-2244-5121', N'PSH@EMPAL.COM', N'PSH', N'1111', NULL, NULL)
+,(24, N'하진우', N'B', N'부산시 수영구', N'010-6318-3734', N'HJW@HOTMAIL.COM', N'HJW', N'1111', NULL, NULL)
+,(25, N'허재현', N'A', N'부산시 해운대구', N'010-7625-0676', N'HJH@NAVER.COM', N'HJH', N'1111', NULL, NULL)
+,(26, N'성명건', N'S', N'부산시 사하구', N'010-9999-9999', N'SMG76@NAVER.COM', N'ADMIN', N'12345', NULL, NULL)
 SET IDENTITY_INSERT [dbo].[memberTBL] OFF
 GO
 INSERT [dbo].[RentalTBL] ([RentalIdx], [memberIdx], [bookIdx], [rentalDt], [returnDt], [rentalState]) VALUES (1, 3, 2, CAST(N'2021-01-29T00:00:00.000' AS DateTime), CAST(N'2021-02-01T00:00:00.000' AS DateTime), N'2')
